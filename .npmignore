@@ -23,6 +23,9 @@
 .settings
 .tmproj
 Thumbs.db
+.editorconfig
+.babelrc
+Makefile
 
 # Folders to ignore
 .CVS
@@ -31,7 +34,6 @@ Thumbs.db
 .idea
 .svn
 bower_components
-dist/
 temp/
 
 # Node.JS
