@@ -1,4 +1,4 @@
-const notEmpty = (...arg) => {
+export const notEmpty = (...arg) => {
   if(!arg.length) return false;
 
   function classof(obj) {
@@ -38,4 +38,4 @@ const notEmpty = (...arg) => {
   }
 
   return arr.length == arg.length ? true : false;
-}
+};
