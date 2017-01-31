@@ -11,6 +11,7 @@ export const notEmpty = (...arg) => {
       case("Boolean"): return booleanFunc(e); break;
       case("Array"): return arrayFunc(e); break;
       case("Object"): return objectFunc(e); break;
+      case("Number"): return numberFunc(e); break;
       case("Null"): return false; break;
       case("Undefined"): return false; break;
       default: return false;
@@ -34,6 +35,11 @@ export const notEmpty = (...arg) => {
 
   function objectFunc(object) {
     if(Object.keys(object).length) return true;
+    return false;
+  }
+
+  function numberFunc(number) {
+    if(isFinite(number)) return true;
     return false;
   }
 
