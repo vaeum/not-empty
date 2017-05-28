@@ -4,7 +4,7 @@
   "description": "Small validate js lib",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "babel index.js --out-dir dist"
+    "prepublish": "./node_modules/.bin/babel index.js --out-dir dist --plugins=transform-remove-console"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,15 @@
   },
   "homepage": "https://github.com/vaeum/not-empty#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
     "babel-preset-es2015": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0"
+  },
+  "dependencies": {
+    "babel-plugin-transform-remove-console": "^6.8.3"
   }
 }
