@@ -20,13 +20,12 @@ export const notEmpty = (...arg) => {
   }
 
   let arr = arg.filter((e, i) => {
-    console.log(classof(e));
     switch (classof(e)) {
       case STRING: return stringFunc(e); break;
       case BOOL: return e; break;
       case ARRAY: return arrayFunc(e); break;
       case OBJECT: return objectFunc(e); break;
-      case NUMBER: return numberFunc(e); break;
+      case NUMBER: return isFinite(e); break;
       case REG_EXP: return true; break;
       case ERROR: return true; break;
       case DATE: return true; break;
@@ -39,7 +38,7 @@ export const notEmpty = (...arg) => {
   });
 
   function stringFunc(string) {
-    if (string) return true;
+    if (string != null) return true;
     return false;
   }
 
@@ -51,10 +50,6 @@ export const notEmpty = (...arg) => {
   function objectFunc(object) {
     if (Object.keys(object).length) return true;
     return false;
-  }
-
-  function numberFunc(number) {
-    return isFinite(number);
   }
 
   return arr.length == arg.length ? true : false;
