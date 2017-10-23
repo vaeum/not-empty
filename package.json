@@ -4,7 +4,8 @@
   "description": "Small validate js lib",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish": "./node_modules/.bin/babel index.js --out-dir dist --plugins=transform-remove-console"
+    "prepublish": "./node_modules/.bin/babel index.js --out-dir dist --plugins=transform-remove-console",
+    "test": "echo \"This is test !!!\""
   },
   "repository": {
     "type": "git",
